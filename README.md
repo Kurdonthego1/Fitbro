@@ -2,3 +2,6 @@
 
 <h2> Business Case </h2>
     <a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Business%20Case.pdf">
+
+<h2> Meeting Minutes Oct 4th, 2024</h2>
+    <a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Meeting%20Minutes%201.pdf">
