@@ -15,4 +15,7 @@
 <h3> 
 <a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Project%20Charter.pdf">Project Charter</a>
 </h3>
-    
+
+<h3>
+<a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Meeting%20Minutes%202.pdf">Meeting Minutes Oct 13th, 2024</a>
+</h3>
