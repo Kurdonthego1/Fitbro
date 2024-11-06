@@ -41,7 +41,7 @@ Our goal is to create a user-friendly site that can server gymgoers and newbies 
 
 - <a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Lo%20Fi%20Designs/Aaron%20-%20Initial%20Designs.pdf">Aaron - Initial Design</a>
 
-<a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Lo%20Fi%20Designs/Aaron%20-%20Initial%20Designs.pdf">Solution 2</a>
+<a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Lo%20Fi%20Designs/Solution%201.pdf">Solution 1</a>
 
 Our first solution was a simple web application for tracking a workout features included were
 - Ability to “start” a workout and add different exercises to the workout.
@@ -51,7 +51,7 @@ However we found that this solution would be missing lots of a the necessary fea
 
 This solution is a great idea for users who have never used a workout app and would like to see how it works for themselves, or for users who seldom go to the gym, but don't take it too seriously. As mentioned earlier, if these users want to start tracking their exercise and become more consistent with working out, they would need more features, which is something solution lacks.
 
-<a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Lo%20Fi%20Designs/Final%20Design%20Lo%20FI.pdf">Solution 2</a>
+<a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Lo%20Fi%20Designs/Solution%202.pdf">Solution 2</a>
 
 Our second solution is again a web application that would track workouts, this time utilizing user sign up/log in and data storing features, it would allow us to better provide the user with functions to make their workout tracking experience easier. 
 
