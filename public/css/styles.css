@@ -1,0 +1,158 @@
+/* ================== General Styles ================== */
+/* General Colors and Global Font Settings */
+/* Flexbox for sticky footer */
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    background-color: #DDDDDA;
+    font-family: Arial, sans-serif;
+}
+
+/* Ensure the main content grows */
+main {
+    flex-grow: 1; /* Push the footer to the bottom */
+}
+
+/* Global Typography */
+h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: "Rubik", sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+/* ================== Background Styles ================== */
+/* Home Page Background */
+.home-page {
+    background: url('../images/Pngtreegym_logo_5149987_transparent_silver.png') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #000000; /* Ensure text is readable */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ================== Header Styles ================== */
+/* Header General Styling */
+header {
+    background-color: #4A707A; /* Primary theme color */
+    height: 170px;
+}
+
+/* Logo Styling */
+#header-image-logo {
+    height: 200px;
+}
+
+/* Navbar Brand */
+header .navbar-brand {
+    font-size: 2.5rem; /* Larger brand text */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Navbar Links */
+header .nav-link {
+    font-size: 1.2rem; /* Increase navbar link size */
+    color: #ffffff !important;
+}
+
+header .nav-link:hover {
+    color: #C2C8C5 !important; /* Subtle hover effect */
+}
+
+/* Dropdown Menu Toggle */
+.nav-link.dropdown-toggle {
+    font-size: 2rem; /* Adjust font size */
+    color: #ffffff; /* Change text color */
+    font-weight: bold; /* Make it bold */
+    padding: 10px 15px; /* Adjust padding */
+    background-color: #4A707A; /* Optional: Add background color */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    right: 0 !important; /* Align the dropdown to the right */
+    left: auto !important; /* Ensure it doesn't stay on the left */
+    transform: scale(1.4); /* Increase the size */
+    transform-origin: top right; /* Ensure scaling starts from the top-right corner */
+    font-size: 1.6rem; /* Adjust font size for readability */
+}
+
+/* ================== Card Styles ================== */
+/* Card General Styling */
+.card {
+    background-color: #94B0B7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header */
+.card-header {
+    background-color: #4A707A;
+    color: white;
+}
+
+/* ================== Button Styles ================== */
+/* Primary Buttons */
+.btn-primary {
+    background-color: #4A707A !important;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #7697A0 !important;
+}
+
+/* Outline Buttons */
+.btn-outline-primary {
+    color: #4A707A;
+    border-color: #4A707A !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4A707A !important;
+    color: white;
+}
+
+/* ================== Footer Styles ================== */
+/* Flexbox for sticky footer */
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Ensure the main content grows */
+main {
+    flex-grow: 1; /* Push the footer to the bottom */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #7697A0;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
