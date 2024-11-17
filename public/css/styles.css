@@ -1,16 +1,14 @@
 /* ================== General Styles ================== */
 /* General Colors and Global Font Settings */
-/* Flexbox for sticky footer */
 html, body {
     height: 100%;
     margin: 0; /* Remove default margin */
     display: flex;
     flex-direction: column; /* Stack elements vertically */
-    background-color: #DDDDDA;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
 }
 
-/* Ensure the main content grows */
 main {
     flex-grow: 1; /* Push the footer to the bottom */
 }
@@ -52,7 +50,8 @@ p {
 /* Header General Styling */
 header {
     background-color: #4A707A; /* Primary theme color */
-    height: 170px;
+    height: 150px;
+    display: flex;
 }
 
 /* Logo Styling */
@@ -60,11 +59,16 @@ header {
     height: 200px;
 }
 
+.menu-button {
+    margin-left: 100%;
+}
+
 /* Navbar Brand */
 header .navbar-brand {
-    font-size: 2.5rem; /* Larger brand text */
+    font-size: 4rem; /* Larger brand text */
     font-weight: bold;
     color: #ffffff;
+    padding-left: 20px;
 }
 
 /* Navbar Links */
@@ -119,6 +123,10 @@ header .nav-link:hover {
     border: none;
 }
 
+.button-class{
+    padding-top: 50px;
+}
+
 .btn-primary:hover {
     background-color: #7697A0 !important;
 }
@@ -135,24 +143,15 @@ header .nav-link:hover {
 }
 
 /* ================== Footer Styles ================== */
-/* Flexbox for sticky footer */
-html, body {
-    height: 100%;
-    margin: 0; /* Remove default margin */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-}
-
-/* Ensure the main content grows */
-main {
-    flex-grow: 1; /* Push the footer to the bottom */
-}
 
 /* Footer Styling */
 footer {
-    background-color: #7697A0;
+    background-color: #7697A0; /* Example background color */
     color: white;
-    padding: 10px;
     text-align: center;
-    flex-shrink: 0; /* Prevent the footer from shrinking */
+    padding: 10px;
+    flex-shrink: 0;
 }
+
+
+/* --- New Shit --- */

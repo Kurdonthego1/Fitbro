@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Exercise - FitBro</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">FitBro</a>
+            <img src="/images/logo.png" id="header-image-logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/app">Home</a></li>
+                            <li><a class="dropdown-item" href="/add-exercises">Add Exercise</a></li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
+    <!-- Content -->
+    <div class="container mt-5">
+        <h2 class="text-center">Add Exercise</h2>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-5" id="exercise-section">
+            <!-- Sample Exercise Cards -->
+            <div class="col">
+                <div class="card">
+                    <img src="/images/benchpress.png" class="card-img-top img-fluid" alt="Exercise Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Bench Press</h5>
+                        <p class="card-text">Strengthen your chest and triceps with this classic exercise.</p>
+                        <form action="" method="post">
+                            <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>             
+            <!-- Custom Exercises -->
+            <% exercises.forEach(function(exercise) { %>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= exercise.Exname %></h5>
+                            <p class="card-text"><%= exercise.Desc %></p>
+                            <!-- Form to add exercise to active workout on button click -->
+                            <form action="/add-to-active" method="post">
+                                <input type="hidden" name="Exname" value="<%= exercise.Exname %>">
+                                <input type="hidden" name="Desc" value="<%= exercise.Desc %>">
+                                <button type="submit" class="btn btn-primary btn-sm">Add to Workout</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h5>Submit a New Exercise</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/addEx" method="post">
+                            <div class="mb-3">
+                                <label for="Exname" class="form-label">Exercise Name</label>
+                                <input name="Exname" type="text" id="Exname" class="form-control" placeholder="Enter exercise name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Desc" class="form-label">Description</label>
+                                <input name="Desc" type="text" id="Desc" class="form-control" placeholder="Enter exercise Description" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Submit Exercise</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-4 button-class">
+            <button class="btn btn-primary" onclick="scrollDown()">Load More</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scroll Functionality -->
+    <script>
+        function scrollDown() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

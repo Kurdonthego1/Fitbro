@@ -1,17 +1,1 @@
-[
-    {
-        "name" : "squat",
-        "set" : null,
-        "reps": null
-    },
-    {
-        "name" : "benchpress",
-        "set" : null,
-        "reps": null
-    },
-    {
-        "name" : "deadlift",
-        "set" : null,
-        "reps": null
-    }
-]
+[{"Exname":"t","Desc":"t","creator":{"username":"test1"}}]
