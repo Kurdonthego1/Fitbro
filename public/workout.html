@@ -23,8 +23,6 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="home.html">Home</a></li>
-                            <li><a class="dropdown-item" href="add-exercise.html">Add Exercise</a></li>
                             <li><a class="dropdown-item" href="login.html">Logout</a></li>
                         </ul>
                     </li>
@@ -35,6 +33,26 @@
 </header>
 
 <body>
+    <!--Add Workout-->
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Add a New Workout</h2>
+                <form action="/add-workout" method="POST">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Workout Title</label>
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Enter workout title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="desc" class="form-label">Workout Description</label>
+                        <textarea id="desc" name="desc" class="form-control" placeholder="Enter workout description" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Workout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <!-- Content -->
     <div class="container mt-5">
         <h2 class="text-center">Workout Plan</h2>
@@ -42,7 +60,7 @@
             <thead class="table-light">
                 <tr>
                     <th>Exercise</th>
-                    <th>Sets</th>
+                    <th>Set</th>
                     <th>Reps</th>
                 </tr>
             </thead>

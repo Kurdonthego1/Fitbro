@@ -23,8 +23,8 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/app">Home</a></li>
-                            <li><a class="dropdown-item" href="/add-exercises">Add Exercise</a></li>
+                            <li><a class="dropdown-item" href="/home">Home</a></li>
+                            <li><a class="dropdown-item" href="/add-exercisepage">Add Exercise</a></li>
                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
                         </ul>
                     </li>
@@ -35,33 +35,58 @@
 </header>
 
 <body>
+    <!--Add a new workout-->
+
+
+
+
+
     <!-- Content -->
     <div class="container mt-5">
         <h2 class="text-center">Workout Plan for <%= username %></h2>
+        <% activeEx.forEach(exercise => { %>
+            <% if (exercise.creator === username) { %>
+                <h3><%= exercise.name %></h3>
         <table class="table table-bordered mt-4">
             <thead class="table-light">
                 <tr>
-                    <th>Exercise</th>
-                    <th>Sets</th>
+                    <th>Set</th>
+                    <th>Weight</th>
                     <th>Reps</th>
+                    <th>Finish Set</th>
                 </tr>
             </thead>
             <tbody>
-                <% activeExercises.forEach(function(exercise) { %>
-                <tr>
-                    <td><%= exercise.Exname %></td>
-                    <td>3</td> <!-- Placeholder values; adjust as needed -->
-                    <td>12</td> <!-- Placeholder values; adjust as needed -->
-                </tr>
-                <% }) %>
+            <% activeSet.forEach(Set => { %>
+                <% if (Set.creator === username && Set.exercise.toString() === exercise._id.toString()) { %>
+                    <tr>
+                    <form action="finishSet" method="post">
+                    <td><%= Set.setNumber %></td>
+                    <td><input type="text" name="Weight" value="<%= Set.weight || '' %>"></td>
+                    <td><input type="text" name="Reps" value="<%= Set.reps || '' %>"></td>
+                    <td><input type="submit" value="&#10003" class="btn btn-primary">
+                    <input type="hidden" name="setId" value="<%= Set._id %>">
+                    <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
+                    <input type="hidden" name="exerciseId" value="<%= activeworkout._id %>">                      
+                    </form>
+                  </tr>
+                <% } %>
+            <% }); %> 
             </tbody>
         </table>
+        <form action="/AddSet" method="post">
+            <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
+            <button type="submit" class="btn btn-primary">Add Set</button>
+        </form>
+            <% } %>
+        <% }); %>
+        <br>
         <div class="d-flex justify-content-between">
-            <form action="/AddExercise" method="post">
+            <form action="/add-exercisepage" method="get">
                 <button type="submit" class="btn btn-primary">Add Exercise</button>
             </form>
             <form action="/FinishWorkout" method="post">
-                <button type="submit" class="btn btn-outline-primary">Finish</button>
+                <button type="submit" class="btn btn-outline-primary">Finish</button> 
             </form>
         </div>
     </div>

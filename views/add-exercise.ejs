@@ -22,8 +22,8 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/app">Home</a></li>
-                            <li><a class="dropdown-item" href="/add-exercises">Add Exercise</a></li>
+                            <li><a class="dropdown-item" href="/home">Home</a></li>
+                            <li><a class="dropdown-item" href="/add-exercisepage">Add Exercise</a></li>
                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
                         </ul>
                     </li>
@@ -50,24 +50,12 @@
                         </form>
                     </div>
                 </div>
-            </div>             
-            <!-- Custom Exercises -->
-            <% exercises.forEach(function(exercise) { %>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= exercise.Exname %></h5>
-                            <p class="card-text"><%= exercise.Desc %></p>
-                            <!-- Form to add exercise to active workout on button click -->
-                            <form action="/add-to-active" method="post">
-                                <input type="hidden" name="Exname" value="<%= exercise.Exname %>">
-                                <input type="hidden" name="Desc" value="<%= exercise.Desc %>">
-                                <button type="submit" class="btn btn-primary btn-sm">Add to Workout</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            <% }) %>
+            </div>
+            <% exLists.forEach(exList => { %>
+                <% if (exList.creator === username) { %>
+                    <%- include('partials/exList', { exList: exList, workout: activeworkout }) %> 
+                <% } %>
+            <% }); %>             
         </div>
 
         <div class="row mt-4">
@@ -77,7 +65,7 @@
                         <h5>Submit a New Exercise</h5>
                     </div>
                     <div class="card-body">
-                        <form action="/addEx" method="post">
+                        <form action="/addExtoList" method="post">
                             <div class="mb-3">
                                 <label for="Exname" class="form-label">Exercise Name</label>
                                 <input name="Exname" type="text" id="Exname" class="form-control" placeholder="Enter exercise name" required>

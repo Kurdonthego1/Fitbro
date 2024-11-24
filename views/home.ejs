@@ -18,6 +18,8 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!--
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
@@ -25,13 +27,12 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="home.html">Home</a></li>
-                            <li><a class="dropdown-item" href="add-exercise.html">Add Exercise</a></li>
                             <li><a class="dropdown-item" href="login.html">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
+            -->
         </div>
     </nav>
 </header>
@@ -42,7 +43,9 @@
         <h1>Welcome Back</h1>
         <h3><%= username %></h3>
         <div class="mt-4">
-            <a href="add-exercise.html" class="btn btn-primary btn-lg">Get Started</a>
+            <form action ="/add-workout" method="post">
+            <input type="submit" value="Get Started" class="btn btn-primary btn-lg">
+            </form>
         </div>
     </div>
 
@@ -51,12 +54,11 @@
         <h2>Workout Templates</h2>
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
-                <div class="card bg-light text-dark">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
+                <% Workouts.forEach(workout => { %>
+                    <% if (workout.creator === username) { %>
+                        <%- include('partials/workouts', { workout: workout, username: username }) %>
+                    <% } %>
+                <% }); %>
             </div>
         </div>
     </div>

@@ -1,0 +1,27 @@
+<h3><%= exercise.name %></h3>
+        <table class="table table-bordered mt-4">
+            <thead class="table-light">
+                <tr>
+                    <th>Weight</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Finish Set</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% Sets.forEach(Set => { %>
+                <% if (Set.creator === username) { %>
+                    tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="submit" 
+                  </tr>
+                <% } %>
+            <% }); %> 
+            <tbody>
+            </tbody>
+        </table>
+        <form action="/AddSet" method="post">
+            <button type="submit" class="btn btn-primary">Add Set</button>
+        </form>

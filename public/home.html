@@ -15,23 +15,9 @@
         <div class="container">
             <a class="navbar-brand" href="#">FitBro</a>
             <img src="./images/luxa.org-no-background-file-r5k61LsuX8UW9jYAi8uiZMwb.png" id="header-image-logo">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse menu-button" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="home.html">Home</a></li>
-                            <li><a class="dropdown-item" href="add-exercise.html">Add Exercise</a></li>
-                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <form action="/" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-primary btn-lg" id="logout-button">Logout</button>
+            </form>
         </div>
     </nav>
 </header>
@@ -42,7 +28,7 @@
         <h1>Welcome Back</h1>
         <h3>(Insert User's Name)</h3>
         <div class="mt-4">
-            <a href="add-exercise.html" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="workout.ejs" class="btn btn-primary btn-lg">Get Started</a>
         </div>
     </div>
 

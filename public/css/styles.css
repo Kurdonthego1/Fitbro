@@ -54,6 +54,14 @@ header {
     display: flex;
 }
 
+/* Navbar Container */
+header .container {
+    display: flex; /* Flexbox layout for child elements */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between left and right sections */
+    width: 100%;
+}
+
 /* Logo Styling */
 #header-image-logo {
     height: 200px;
@@ -81,23 +89,20 @@ header .nav-link:hover {
     color: #C2C8C5 !important; /* Subtle hover effect */
 }
 
-/* Dropdown Menu Toggle */
-.nav-link.dropdown-toggle {
-    font-size: 2rem; /* Adjust font size */
-    color: #ffffff; /* Change text color */
-    font-weight: bold; /* Make it bold */
-    padding: 10px 15px; /* Adjust padding */
-    background-color: #4A707A; /* Optional: Add background color */
-    border-radius: 5px; /* Optional: Add rounded corners */
+/* Logout Button */
+#logout-button {
+    font-size: 1.2rem; /* Adjust button font size */
+    padding: 10px 20px; /* Adjust padding for size */
+    background-color: #0080ff; /* Custom button color */
+    color: #ffffff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-/* Dropdown Menu */
-.dropdown-menu {
-    right: 0 !important; /* Align the dropdown to the right */
-    left: auto !important; /* Ensure it doesn't stay on the left */
-    transform: scale(1.4); /* Increase the size */
-    transform-origin: top right; /* Ensure scaling starts from the top-right corner */
-    font-size: 1.6rem; /* Adjust font size for readability */
+#logout-button:hover {
+    background-color: #0381ff; /* Darker blue on hover */
 }
 
 /* ================== Card Styles ================== */
