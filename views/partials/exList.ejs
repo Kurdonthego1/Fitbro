@@ -5,6 +5,7 @@
             <h5 class="card-title"><%= exList.name %></h5>
             <p class="card-text" ><%= exList.desc %></p>
             <form action="/addExtoWorkout" method="post">
+                <input type="hidden" name="workoutId" value="<% activeworkout._id %>">
                 <input type="hidden" name="Exname" value="<%= exList.name %>">
                 <input type="hidden" name="workoutId" value="<%= workout._id %>">
                 <button type="submit" class="btn btn-primary btn-sm">Add</button>

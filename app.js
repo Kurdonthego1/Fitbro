@@ -1,5 +1,4 @@
 const express = require("express");
-const fs = require("fs");
 const mongoose = require( "mongoose" );
 
 const session = require("express-session");
@@ -30,8 +29,6 @@ mongoose.connect('mongodb://localhost:27017/FitBro')
     .then(() => {
         console.log("Connected");
 
-        // Insert data after successful connection
-        //insertData();
     })
     .catch(error => {
         console.error("Connection error:", error);
@@ -65,7 +62,10 @@ const Set = mongoose.model("Set", setSchema);
 
 const exerciseSchema = new mongoose.Schema({
     name: String,
-    sets: [setSchema],
+    sets: {
+        type: [{type: mongoose.Schema.Types.ObjectId, ref: "Set"}],
+        default:[],
+    },
     creator: String,
     workout: { type: mongoose.Schema.Types.ObjectId, ref: "Workout" },
 });
@@ -84,7 +84,11 @@ const workoutSchema = new mongoose.Schema({
     title: String,
     creator: String,
     desc: String,
-    exercises: [exerciseSchema],
+    exercises: {
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Exercise" }],
+        default:[],
+    },
+    isTemplate: { type: Boolean, default: false },
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
@@ -147,7 +151,7 @@ app.post("/register", (req, res) => {
 app.get("/home", async(req, res) => {
     if (req.isAuthenticated()){
         try{
-        const Workouts = await Workout.find({});
+        const Workouts = await Workout.find({creator: req.user.username});
         res.render("home", {username: req.user.username, Workouts});
     } catch (err){
         console.log(err);
@@ -161,7 +165,7 @@ app.get("/home", async(req, res) => {
 app.post("/add-workout", async (req, res) =>{
     if(!req.isAuthenticated()) return res.redirect("/");
 
-    const newWorkout = new Workout({
+    const workout = new Workout({
         title: null,
         creator: req.user.username,
         desc: null,
@@ -169,8 +173,8 @@ app.post("/add-workout", async (req, res) =>{
     });
 
     try{
-        await newWorkout.save();
-        res.redirect("/workout");
+        await workout.save();
+        res.redirect("/workout?workoutId=" + workout._id);
     } catch ( err ){
         console.log ( err );
     }
@@ -179,30 +183,31 @@ app.post("/add-workout", async (req, res) =>{
 app.get("/workout", async(req, res) => {
     if(req.isAuthenticated()){
         try{
-            const activeworkout = await Workout.find({});
-            const activeEx = await Exercise.find({})
-            const activeSet = await Set.find({})
-            res.render("workout", {activeworkout, username: req.user.username, activeEx, activeSet});
+            const activeworkout = await Workout.findById(req.query.workoutId).populate({
+                path: "exercises",
+                populate: { path: "sets" },
+              });
+            res.render("workout", {activeworkout, username: req.user.username});
         } catch (err) {
             console.log(err);
         }
+        
     } else {
         console.log ("was not authorized");
         res.redirect("/");
     }
-})
+});
 
 app.post("/addSet", async (req, res) => {
     if(!req.isAuthenticated()) return res.redirect("/");
 
-    const { exerciseId } = req.body;
-    const { workoutId } = req.body;
+    const { exerciseId, workoutId } = req.body;
 
     const exercise = await Exercise.findById(exerciseId);
     const activeworkout = await Workout.findById(workoutId);
 
-    const userExSets = await Set.find({ creator: req.user.username, exercise: exerciseId });
-    const newSetNumber = userExSets.length + 1;
+    const totalSets = await Set.find({ exercise: exerciseId });
+    const newSetNumber = totalSets.length + 1;
 
     const newSet = new Set({
         setNumber: newSetNumber,
@@ -215,18 +220,19 @@ app.post("/addSet", async (req, res) => {
     try{
         await newSet.save();
 
-        exercise.sets.push(newSet);
+        exercise.sets.push(newSet); // why not pushing id?
         await exercise.save();
-        await activeworkout.save();
 
-        res.redirect("/workout");
+        res.redirect(`/workout?workoutId=${workoutId}`);
     } catch ( err ){
         console.log ( err );
     }
-})
+});
 
 app.post("/addExtoList", async (req, res) => {
     if(!req.isAuthenticated()) return res.redirect("/");
+
+    const { workoutId } = req.body;
 
     const newListEx = new exList({
         name: req.body.Exname,
@@ -235,7 +241,7 @@ app.post("/addExtoList", async (req, res) => {
     });
     try{
         await newListEx.save();
-        res.redirect("/add-exercisepage");
+        res.redirect("/add-exercisepage?workoutId=" + workoutId);
     } catch ( err ){
         console.log ( err );
     }
@@ -244,10 +250,8 @@ app.post("/addExtoList", async (req, res) => {
 app.get("/add-exercisepage", async (req, res) => {
     if(req.isAuthenticated()){
         try{
-            const exLists = await exList.find({});
-            const activeworkout = await Workout.findOne({});
-
-            activeworkout._id = activeworkout._id.toString();
+            const exLists = await exList.find({creator: req.user.username});
+            const activeworkout = await Workout.findById(req.query.workoutId);
             
             res.render("add-exercise", {exLists, username: req.user.username, activeworkout});
         } catch (err) {
@@ -276,10 +280,10 @@ app.post("/addExtoWorkout", async (req, res) => {
     try{
         await newEx.save();
         
-        workout.exercises.push(newEx);
+        workout.exercises.push(newEx._id);
         await workout.save();
 
-        res.redirect("/workout");
+        res.redirect(`/workout?workoutId=${workoutId}`);
     } catch ( err ){
         console.log ( err );
     }
@@ -288,38 +292,100 @@ app.post("/addExtoWorkout", async (req, res) => {
 app.post("/finishSet", async (req, res) => {
     if (!req.isAuthenticated()) return res.redirect("/");
 
-    const { setId, exerciseId, Weight, Reps } = req.body;
+    const { setId, workoutId, Weight, Reps } = req.body;
 
     try {
         // Find the set to update
         const set = await Set.findById(setId);
         
         // Update the weight and reps for this set
-        set.weight = Weight;
-        set.reps = Reps;
+        set.weight = parseFloat(Weight) || 0;
+        set.reps = parseInt(Reps) || 0;
 
         // Save the updated set
         await set.save();
 
-        // Find the exercise and update if necessary
-        const exercise = await Exercise.findById(exerciseId);
-        if (exercise) {
-            // Ensure the set is included in the exercise (should already be there, but this ensures it's updated correctly)
-            const setIndex = exercise.sets.findIndex(s => s._id.toString() === setId);
-            if (setIndex !== -1) {
-                exercise.sets[setIndex] = set;
-                await exercise.save();
-            }
-        }
-
         // Redirect back to the workout page to see the updated set
-        res.redirect("/workout");
+        res.redirect(`/workout?workoutId=${workoutId}`);
     } catch (err) {
         console.log(err);
-        res.redirect("/workout");
+        res.redirect(`/workout?workoutId=${workoutId}`);
     }
-})
+});
 
+app.post("/finishWorkout", async (req, res) => {
+    if (!req.isAuthenticated()) return res.redirect("/");
+
+    const { workoutId, workoutname, WorkoutDesc } = req.body;
+
+    try {
+        // Find the workout by ID
+        const workout = await Workout.findById(workoutId);
+
+        if (!workout) {
+            console.log("Workout not found");
+            return res.redirect("/home");
+        }
+
+        // Update the workout's title and description
+        workout.title = workoutname;
+        workout.desc = WorkoutDesc;
+
+        // Save the updated workout
+        await workout.save();
+
+        // Redirect back to the home page
+        res.redirect("/home");
+    } catch (err) {
+        console.log(err);
+        res.redirect("/home");
+    }
+});
+
+app.post("/addAllExercises", async (req, res) => {
+    if (!req.isAuthenticated()) return res.redirect("/");
+
+    const { workoutId } = req.body;
+
+    try {
+        // Find the workout by ID
+        const workout = await Workout.findById(workoutId);
+
+        if (!workout) {
+            console.log("Workout not found");
+            return res.redirect("/home");
+        }
+
+        // Retrieve all exercises from the exList (adjust the query as needed)
+        const exLists = await exList.find({ creator: req.user.username });
+
+        // Loop through each exercise in exLists and add it to the workout
+        for (const ex of exLists) {
+            // Create a new Exercise document for the workout
+            const newExercise = new Exercise({
+                name: ex.name,
+                sets: [],
+                creator: req.user.username,
+                workout: workout._id,
+            });
+
+            // Save the new Exercise
+            await newExercise.save();
+
+            // Add the new Exercise to the workout's exercises array
+            workout.exercises.push(newExercise._id);
+        }
+
+        // Save the updated workout
+        await workout.save();
+
+        // Redirect back to the workout page
+        res.redirect(`/workout?workoutId=${workoutId}`);
+    } catch (err) {
+        console.log(err);
+        res.redirect(`/workout?workoutId=${workoutId}`);
+    }
+});
 
 
 

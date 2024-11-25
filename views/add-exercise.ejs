@@ -52,10 +52,21 @@
                 </div>
             </div>
             <% exLists.forEach(exList => { %>
-                <% if (exList.creator === username) { %>
-                    <%- include('partials/exList', { exList: exList, workout: activeworkout }) %> 
-                <% } %>
-            <% }); %>             
+                <div class="col">
+                    <div class="card">
+                        <img src="" class="card-img-top img-fluid" alt="Exercise Image">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= exList.name %></h5>
+                            <p class="card-text" ><%= exList.desc %></p>
+                            <form action="/addExtoWorkout" method="post">
+                                <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
+                                <input type="hidden" name="Exname" value="<%= exList.name %>">
+                                <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>            
         </div>
 
         <div class="row mt-4">
@@ -66,6 +77,7 @@
                     </div>
                     <div class="card-body">
                         <form action="/addExtoList" method="post">
+                            <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
                             <div class="mb-3">
                                 <label for="Exname" class="form-label">Exercise Name</label>
                                 <input name="Exname" type="text" id="Exname" class="form-control" placeholder="Enter exercise name" required>

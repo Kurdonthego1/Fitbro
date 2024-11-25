@@ -44,60 +44,97 @@
     <!-- Content -->
     <div class="container mt-5">
         <h2 class="text-center">Workout Plan for <%= username %></h2>
-        <% activeEx.forEach(exercise => { %>
-            <% if (exercise.creator === username) { %>
-                <h3><%= exercise.name %></h3>
-        <table class="table table-bordered mt-4">
-            <thead class="table-light">
-                <tr>
-                    <th>Set</th>
-                    <th>Weight</th>
-                    <th>Reps</th>
-                    <th>Finish Set</th>
-                </tr>
-            </thead>
-            <tbody>
-            <% activeSet.forEach(Set => { %>
-                <% if (Set.creator === username && Set.exercise.toString() === exercise._id.toString()) { %>
-                    <tr>
-                    <form action="finishSet" method="post">
-                    <td><%= Set.setNumber %></td>
-                    <td><input type="text" name="Weight" value="<%= Set.weight || '' %>"></td>
-                    <td><input type="text" name="Reps" value="<%= Set.reps || '' %>"></td>
-                    <td><input type="submit" value="&#10003" class="btn btn-primary">
-                    <input type="hidden" name="setId" value="<%= Set._id %>">
+
+        <!-- Display Exercises -->
+        <% if (activeworkout.exercises && activeworkout.exercises.length > 0) { %>
+            <% activeworkout.exercises.forEach(exercise => { %>
+                <h3 class="mt-4"><%= exercise.name %></h3>
+                <table class="table table-bordered mt-3">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Set</th>
+                            <th>Weight</th>
+                            <th>Reps</th>
+                            <th>Finish Set</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (exercise.sets && exercise.sets.length > 0) { %>
+                            <% exercise.sets.forEach(set => { %>
+                                <tr>
+                                    <form action="/finishSet" method="post">
+                                        <td><%= set.setNumber %></td>
+                                        <td><input type="text" name="Weight" value="<%= set.weight || '' %>"></td>
+                                        <td><input type="text" name="Reps" value="<%= set.reps || '' %>"></td>
+                                        <td>
+                                            <input type="submit" value="&#10003" class="btn btn-primary">
+                                            <input type="hidden" name="setId" value="<%= set._id %>">
+                                            <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
+                                            <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
+                                        </td>
+                                    </form>
+                                </tr>
+                            <% }); %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="4">No sets found for this exercise.</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+                <form action="/addSet" method="post" class="mb-4">
                     <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
-                    <input type="hidden" name="exerciseId" value="<%= activeworkout._id %>">                      
-                    </form>
-                  </tr>
-                <% } %>
-            <% }); %> 
-            </tbody>
-        </table>
-        <form action="/AddSet" method="post">
-            <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
-            <button type="submit" class="btn btn-primary">Add Set</button>
-        </form>
-            <% } %>
-        <% }); %>
-        <br>
-        <div class="d-flex justify-content-between">
+                    <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
+                    <button type="submit" class="btn btn-primary">Add Set</button>
+                </form>
+            <% }); %>
+        <% } else { %>
+            <p>No exercises found for this workout.</p>
+        <% } %>
+
+        <!-- Add Exercise Button -->
+        <div class="text-center mb-5">
             <form action="/add-exercisepage" method="get">
-                <button type="submit" class="btn btn-primary">Add Exercise</button>
-            </form>
-            <form action="/FinishWorkout" method="post">
-                <button type="submit" class="btn btn-outline-primary">Finish</button> 
+                <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
+                <button type="submit" class="btn btn-success">Add Exercise</button>
             </form>
         </div>
+
+        <!-- Finish Workout Section -->
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h5>Finish Workout</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/finishWorkout" method="post">
+                            <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
+                            <div class="mb-3">
+                                <label for="workoutname" class="form-label">Workout Name</label>
+                                <input name="workoutname" type="text" id="workoutname" class="form-control" placeholder="Enter workout name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="WorkoutDesc" class="form-label">Workout Description</label>
+                                <textarea name="WorkoutDesc" id="WorkoutDesc" class="form-control" placeholder="Enter workout description"></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Finish Workout</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
+    <!-- Footer -->
     <footer class="text-center mt-4 py-3">
         <p>&copy; 2024 FitBro. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
-
-
