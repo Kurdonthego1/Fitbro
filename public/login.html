@@ -9,60 +9,48 @@
 </head>
 <body class="login-page">
     <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="home.html">FitBro</a>
-                <img src="./images/luxa.org-no-background-file-r5k61LsuX8UW9jYAi8uiZMwb.png" id="header-image-logo">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- 
-                <div class="collapse navbar-collapse menu-button" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="home.html">Home</a></li>
-                                <li><a class="dropdown-item" href="add-exercise.html">Add Exercise</a></li>
-                                <li><a class="dropdown-item" href="login.html">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                -->
+        <div class="container header">
+            <!-- Left: Home link -->
+            <div class="branding">
+                <a class="navbar-brand" href="/home">FitBro</a>
             </div>
-        </nav>
+            
+            <!-- Right: Logo -->
+            <div class="logo-center">
+                <img src="./images/luxa.org-no-background-file-r5k61LsuX8UW9jYAi8uiZMwb.png" id="header-image-logo">
+            </div>
+        </div>
     </header>
+
+    <h1 class="welcome-heading">Welcome to FitBro!</h1>
+    <p class="welcome-text">Start your fitness journey today!</p>
+
     <main class="flex-grow-1">
-        
         <div class="container mt-5" id="logincontainer">
-            <div class="card mx-auto" style="max-width: 600px;">
-                <div class="card-header text-center">
-                    <h4>Log In</h4>
-                </div>
-                <div class="card-body">
-                    <form action="/login" method="post">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input name="username" type="text" id="username" class="form-control" placeholder="Enter your username">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input name="password" type="password" id="password" class="form-control" placeholder="Enter your password">
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Log In</button>
-                        </div>
-                        <div class="text-center mt-3">
-                            <p>Not a user? <a href="signup.html">Sign Up</a></p>
-                        </div>
-                    </form>
-                </div>
+            <div class="login-box mx-auto">
+                <h2 class="login-title text-center">Log In</h2>
+                <form action="/login" method="post" class="login-form">
+                    <div class="form-group mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input name="username" type="text" id="username" class="form-input" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input name="password" type="password" id="password" class="form-input" placeholder="Enter your password">
+                    </div>
+                    <div class="form-actions d-grid">
+                        <button type="submit" class="btn-login">Log In</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p>Not a user? <a href="signup.html" class="signup-link">Sign Up</a></p>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
+    
+
+    
     <footer class="text-center mt-4 py-3">
         <p>&copy; 2024 FitBro. All rights reserved.</p>
     </footer>

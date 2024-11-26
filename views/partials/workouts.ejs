@@ -1,7 +1,13 @@
-<div class="col"></div>
+
+<div class="col">
 <div class="card bg-light text-dark">
     <div class="card-body">
-        <h5 class="card-title" ></h5><%= workout.title %></h5>
+        <form action = "/useTemplate" method="post">
+        <h5 class="card-title" ><%= workout.title %></h5>
         <p class="card-text"><%= workout.desc %></p>
+        <input type="hidden" name="workoutId" value="<%= workout._id %>">
+        <input type="submit" value="Use Template" class="btn btn-primary btn-lg">
+        </form>
     </div>
+</div>
 </div>

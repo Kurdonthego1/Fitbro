@@ -27,83 +27,141 @@ h2 {
 
 h3 {
     font-size: 2rem;
+    color: white;
 }
 
 p {
     font-size: 1.2rem;
 }
 
+.table-colour{
+    color: white;
+}
+
 /* ================== Background Styles ================== */
 /* Home Page Background */
 .home-page {
-    background: url('../images/Pngtreegym_logo_5149987_transparent_silver.png') no-repeat center center fixed;
-    background-size: cover;
-    background-blend-mode: overlay;
+    /* Add the image first, then the gradient background */
+    background: 
+        url('../images/black_transparent_logo.png') no-repeat center center, 
+        linear-gradient(0deg, rgba(74, 112, 122, 1) 0%, rgba(31, 58, 66, 1) 100%);
+
+    height: auto;
+    background-size: contain, cover; /* Scale the image properly and cover the gradient */
+    background-blend-mode: normal; /* Ensure the image is not blended with the gradient */
     color: #000000; /* Ensure text is readable */
-    min-height: 100vh;
+    min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: auto;
 }
 
+body.login-page{
+    background: rgb(84, 125, 136);
+    background: linear-gradient(0deg, rgba(74,112,122,1) 0%, rgba(31,58,66,1) 100%);
+}
+
+body.signup-page{
+    background: rgb(74,112,122);
+    background: linear-gradient(0deg, rgba(74,112,122,1) 0%, rgba(31,58,66,1) 100%);
+}
+
+body.workout-page{
+    background: rgb(84, 125, 136);
+    background: linear-gradient(0deg, rgba(74,112,122,1) 0%, rgba(31,58,66,1) 100%);
+    height: auto;
+}
+
+body.add-exercisepage{
+    background: rgb(84, 125, 136);
+    background: linear-gradient(0deg, rgba(74,112,122,1) 0%, rgba(31,58,66,1) 100%);
+    height: auto;
+}
+
+.hometext{
+    color: white;
+    font-weight: 700; /* Make it bold for emphasis */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Add a shadow for a popping effect */
+}
 /* ================== Header Styles ================== */
 /* Header General Styling */
 header {
     background-color: #4A707A; /* Primary theme color */
-    height: 150px;
+    justify-content: space-evenly;
+    align-items: center; /* Vertically center items */
+    height: 120px;
     display: flex;
-}
-
-/* Navbar Container */
-header .container {
-    display: flex; /* Flexbox layout for child elements */
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between left and right sections */
     width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow at the bottom */
 }
 
-/* Logo Styling */
-#header-image-logo {
-    height: 200px;
+header .container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Ensure items are spread out */
+    align-items: center; /* Vertically align items */
 }
 
-.menu-button {
-    margin-left: 100%;
+.branding {
+    font-size: 2rem;
 }
 
-/* Navbar Brand */
-header .navbar-brand {
-    font-size: 4rem; /* Larger brand text */
+/* Navbar Brand (Left Section) */
+.navbar-brand {
     font-weight: bold;
-    color: #ffffff;
-    padding-left: 20px;
-}
-
-/* Navbar Links */
-header .nav-link {
-    font-size: 1.2rem; /* Increase navbar link size */
     color: #ffffff !important;
+    text-align: left;
+    font-size: 2rem;
 }
 
-header .nav-link:hover {
-    color: #C2C8C5 !important; /* Subtle hover effect */
+/* Logo (Center Section) */
+.logo-center {
+    display: flex;
+    justify-content: center; /* Center logo horizontally */
+    align-items: center;
 }
 
-/* Logout Button */
-#logout-button {
-    font-size: 1.2rem; /* Adjust button font size */
-    padding: 10px 20px; /* Adjust padding for size */
-    background-color: #0080ff; /* Custom button color */
-    color: #ffffff; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+#header-image-logo {
+    max-height: 150px; /* Adjust logo size */
 }
 
-#logout-button:hover {
-    background-color: #0381ff; /* Darker blue on hover */
+/* Logout Link (Right Section) */
+.logout-link {
+    font-size: 2rem; /* Adjust text size */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
+    color: white; /* Match header theme */
+    text-align: right;
 }
+
+.logout-link:hover {
+    color: rgb(0, 0, 0); /* Change text color on hover */
+    text-decoration: none; /* Ensure no underline appears */
+}
+
+
+/* Welcome Heading */
+.welcome-heading {
+    font-size: 3rem; /* Adjust for larger, impactful text */
+    font-family: 'Rubik', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff; /* White text for better contrast */
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 45px;
+    font-weight: 700; /* Make it bold for emphasis */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Add a shadow for a popping effect */
+}
+
+/* Welcome Subtext */
+.welcome-text {
+    font-size: 1.2rem; 
+    font-family: 'Rubik', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #d1e3e8;
+    text-align: center;
+    font-weight: 500; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+}
+
 
 /* ================== Card Styles ================== */
 /* Card General Styling */
@@ -111,21 +169,37 @@ header .nav-link:hover {
     background-color: #94B0B7;
     color: white;
     border: none;
+    min-height: 200px !important;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Header */
-.card-header {
-    background-color: #4A707A;
-    color: white;
+.card-body{
+    min-height: 70px !important;
+}
+
+.add-button-exercise{
+    flex-grow: 1;
 }
 
 /* ================== Button Styles ================== */
 /* Primary Buttons */
+.addbtn{
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #4A707A;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 40 40px;
+}
 .btn-primary {
     background-color: #4A707A !important;
     border: none;
+    
 }
 
 .button-class{
@@ -147,6 +221,10 @@ header .nav-link:hover {
     color: white;
 }
 
+.clicked {
+    color: rgb(9, 255, 0); /* Feedback color when clicked */
+    transition: color 0.3s ease; /* Smooth transition */
+}
 /* ================== Footer Styles ================== */
 
 /* Footer Styling */
@@ -158,5 +236,151 @@ footer {
     flex-shrink: 0;
 }
 
-
 /* --- New Shit --- */
+.green-background {
+    background-color: #198754 !important;
+    color: white;
+}
+
+/* Login Box Styles */
+.login-box {
+    background: #FFFFFF;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 55px;
+    box-shadow: 0px 19px 53px 0px rgba(0,0,0,0.75);
+    margin: 0 auto;
+}
+
+.login-title {
+    font-size: 35px;
+    font-weight: bold;
+    color: #4A707A;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.login-form .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #4A707A;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    background: #F9F9F9;
+    color: #4A707A;
+}
+
+
+
+/* Button */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #4A707A;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: #2D4E55;
+}
+
+/* Sign Up Link */
+.signup-link {
+    color: #2D4E55;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+
+/*Sign Up */
+.signup-box {
+    background: #FFFFFF;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 55px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.signup-title {
+    font-size: 35px;
+    font-weight: bold;
+    color: #4A707A;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+.signup-form .form-group {
+    margin-bottom: 20px;
+}
+
+.signup-form .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.signup-form .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #4A707A;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    background: #F9F9F9;
+    color: #4A707A;
+}
+
+.signup-form .form-input:focus {
+    border-color: #2D4E55;
+    box-shadow: 0 0 8px rgba(42, 85, 95, 0.3);
+}
+
+/* Button */
+.btn-signup {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #4A707A;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    background: #2D4E55;
+}
+
+
+
+/*home css
+
