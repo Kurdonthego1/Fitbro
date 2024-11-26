@@ -15,9 +15,9 @@ app.use(express.json());
 app.set("view engine", "ejs");
 
 app.use(session({
-    secret: process.env.SECRET, // Replace with a strong secret key
+    secret: process.env.SECRET, 
     resave: false,
-    saveUninitialized: false, // Only save sessions if there is data to save
+    saveUninitialized: false, 
 }));
 
 app.use (passport.initialize());
@@ -135,19 +135,30 @@ app.get('/logout', function(req, res, next) {
   });
 
 // Registration route
-app.post("/register", (req, res) => {
-    User.register({username : req.body.username}, req.body.password, (err, user) =>{
-        if(err) {
-            console.log (err);
+app.post("/register", async (req, res) => {
+    try{
+        const foundUser = await User.findOne({username: req.body.username});
+
+        if (foundUser) {
+            console.log("Username already taken");
             return res.redirect("/");
-        } else {
-            passport.authenticate("local")(req, res, () => {
-                return res.redirect('/home');
-            });
+        }
+
+        User.register({username : req.body.username}, req.body.password, (err, user) =>{
+            if(err) {
+                console.log (err);
+                return res.redirect("/");
+            } else {
+                passport.authenticate("local")(req, res, () => {
+                    return res.redirect('/home');
+                });
+            }
+        });
+        } catch (err){
+            console.log(err);
+            return res.redirect("/");
         }
     });
-});
-
 // Route to render home page with workouts
 app.get("/home", async(req, res) => {
     if (req.isAuthenticated()){
@@ -221,7 +232,7 @@ app.post("/addSet", async (req, res) => {
     try{
         await newSet.save();
 
-        exercise.sets.push(newSet); // why not pushing id?
+        exercise.sets.push(newSet._id); // why not pushing id?
         await exercise.save();
 
         res.redirect(`/workout?workoutId=${workoutId}`);
@@ -441,50 +452,54 @@ app.post("/logoutworkout", async (req, res) => {
     
     });
 
-//Add an exercise
-// app.post("/addEx", async(req, res) => {
-//     if (req.session.user) {
-//         const { Exname, Desc } = req.body;
 
-//         const newEx =  {
-//             Exname,
-//             Desc,
-//             creator: req.session.user.username
-//         };
+app.post("/removeSet", async (req, res) =>{
 
-//         exercises.push(newEx);
-//         saveEx();
-//         res.redirect("/add-exercises");
-//     } else {
-//         res.redirect("/");
-//     }
-// });
+    if(!req.isAuthenticated()) return res.redirect("/");
 
-// // 9. Submit an exercise to the database ////////////////////////////////
-// // Note that in the username, we are using the username from the
-// // session rather than the form
-// app.post( "/addEx", async( req, res ) => {
-//     console.log( "User " + req.user.username + " is adding the exercise:" );
-//     console.log( req.body )
-//     const exercise = new exercise({
-//         userName:   req.user.username,
-//         exerciseName:   req.body.exerciseName,
-//         exercise: req.body.exercise
-//     });
+    const { setId, exerciseId, workoutId } = req.body;
 
-//     game.save();
-//     res.redirect( "/home" );
-// });
-// ////////////////////////////////////////////////////////////////////
+    try{
+        await Exercise.findByIdAndUpdate(
+            exerciseId,
+            { $pull: { sets: setId }}
+        );
 
+        await Set.findByIdAndDelete(setId);
 
-// // Route to render add-exercise page
-// app.get("/add-exercises", (req, res) => {
-//     if (req.session.user) {
-//         loadEx();
-//         console.log("Logged in as:", req.session.user.username);
-//         res.render("add-exercise", { exercises, username: req.session.user.username });
-//     } else {
-//         res.redirect("/");
-//     }
-// });
+        res.redirect(`/workout?workoutId=${workoutId}`);
+    } catch ( err ){
+        console.log(err);
+        res.redirect(`/workout?workoutId=${workoutId}`);
+    }
+});
+
+app.post("/removeExercise", async (req, res) =>{
+
+    if(!req.isAuthenticated()) return res.redirect("/");
+
+    const { exerciseId, workoutId } = req.body;
+
+    try{
+
+        const exercise = await Exercise.findById(exerciseId).populate("sets");
+
+        if (exercise) {
+            for (const set of exercise.sets) {
+                await Set.findByIdAndDelete(set._id);
+            }
+
+            await Exercise.findByIdAndDelete(exerciseId);
+
+            await Workout.findByIdAndUpdate(
+                workoutId,
+                { $pull: { exercises: exerciseId } }
+            );
+        }
+
+        res.redirect(`/workout?workoutId=${workoutId}`);
+    } catch ( err ){
+        console.log(err);
+        res.redirect(`/workout?workoutId=${workoutId}`);
+    }
+});

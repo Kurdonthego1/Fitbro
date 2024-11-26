@@ -4,7 +4,7 @@ html, body {
     height: 100%;
     margin: 0; /* Remove default margin */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column; 
     background-color: #ffffff;
     font-family: Arial, sans-serif;
 }
@@ -13,7 +13,7 @@ main {
     flex-grow: 1; /* Push the footer to the bottom */
 }
 
-/* Global Typography */
+
 h1 {
     font-size: 30px;
     font-weight: bolder;
@@ -47,10 +47,10 @@ p {
         linear-gradient(0deg, rgba(74, 112, 122, 1) 0%, rgba(31, 58, 66, 1) 100%);
 
     height: auto;
-    background-size: contain, cover; /* Scale the image properly and cover the gradient */
-    background-blend-mode: normal; /* Ensure the image is not blended with the gradient */
-    color: #000000; /* Ensure text is readable */
-    min-height: 100vh; /* Full viewport height */
+    background-size: contain, cover; 
+    background-blend-mode: normal; /*picture wont blend in to the gradient*/
+    color: #000000; 
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -85,21 +85,20 @@ body.add-exercisepage{
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Add a shadow for a popping effect */
 }
 /* ================== Header Styles ================== */
-/* Header General Styling */
 header {
-    background-color: #4A707A; /* Primary theme color */
+    background-color: #4A707A; /* MAIN COLOR */
     justify-content: space-evenly;
-    align-items: center; /* Vertically center items */
+    align-items: center; 
     height: 120px;
     display: flex;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow at the bottom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow at bottom */
 }
 
 header .container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Ensure items are spread out */
-    align-items: center; /* Vertically align items */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 .branding {
@@ -117,12 +116,12 @@ header .container {
 /* Logo (Center Section) */
 .logo-center {
     display: flex;
-    justify-content: center; /* Center logo horizontally */
+    justify-content: center; 
     align-items: center;
 }
 
 #header-image-logo {
-    max-height: 150px; /* Adjust logo size */
+    max-height: 150px;/
 }
 
 /* Logout Link (Right Section) */
@@ -142,14 +141,14 @@ header .container {
 
 /* Welcome Heading */
 .welcome-heading {
-    font-size: 3rem; /* Adjust for larger, impactful text */
+    font-size: 3rem; 
     font-family: 'Rubik', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #ffffff; /* White text for better contrast */
+    color: #ffffff; 
     text-align: center;
     margin-bottom: 40px;
     padding-top: 45px;
-    font-weight: 700; /* Make it bold for emphasis */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Add a shadow for a popping effect */
+    font-weight: 700; 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); 
 }
 
 /* Welcome Subtext */
@@ -164,7 +163,6 @@ header .container {
 
 
 /* ================== Card Styles ================== */
-/* Card General Styling */
 .card {
     background-color: #94B0B7;
     color: white;
@@ -184,7 +182,6 @@ header .container {
 }
 
 /* ================== Button Styles ================== */
-/* Primary Buttons */
 .addbtn{
     padding: 12px;
     font-size: 16px;
@@ -200,6 +197,12 @@ header .container {
     background-color: #4A707A !important;
     border: none;
     
+}
+
+.btn-primary-red{
+    background-color: #A52A2A !important;
+    border: none;
+    color:white !important;
 }
 
 .button-class{
@@ -222,21 +225,20 @@ header .container {
 }
 
 .clicked {
-    color: rgb(9, 255, 0); /* Feedback color when clicked */
-    transition: color 0.3s ease; /* Smooth transition */
+    color: rgb(9, 255, 0); 
+    transition: color 0.3s ease; 
 }
 /* ================== Footer Styles ================== */
 
 /* Footer Styling */
 footer {
-    background-color: #7697A0; /* Example background color */
+    background-color: #7697A0; 
     color: white;
     text-align: center;
     padding: 10px;
     flex-shrink: 0;
 }
 
-/* --- New Shit --- */
 .green-background {
     background-color: #198754 !important;
     color: white;
@@ -382,5 +384,4 @@ footer {
 
 
 
-/*home css
 

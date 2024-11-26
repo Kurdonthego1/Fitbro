@@ -47,6 +47,7 @@
                             <th>Weight</th>
                             <th>Reps</th>
                             <th>Finish Set</th>
+                            <th>Remove Set</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,13 +63,20 @@
                                             <input type="hidden" name="setId" value="<%= set._id %>">
                                             <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
                                             <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
+                                        </form>
                                         </td>
+                                        <td>
+                                            <form action="/removeSet" method="post">
+                                            <input type="submit" value="X" class="btn btn-primary-red" id="finishSetButton">
+                                            <input type="hidden" name="setId" value="<%= set._id %>">
+                                            <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
+                                            <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
                                     </form>
                                 </tr>
                             <% }); %>
                         <% } else { %>
                             <tr>
-                                <td colspan="4">No sets found for this exercise.</td>
+                                <td colspan="5">No sets found for this exercise.</td>
                             </tr>
                         <% } %>
                     </tbody>
@@ -77,6 +85,11 @@
                     <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
                     <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
                     <button type="submit" class="btn btn-primary">Add Set</button>
+                </form>
+                <form action="/removeExercise" method="post">
+                    <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
+                    <input type="hidden" name="workoutId" value="<%= activeworkout._id %>">
+                    <button type="submit" class="btn btn-primary-red">Remove Exercise</button>
                 </form>
             <% }); %>
         <% } else { %>
