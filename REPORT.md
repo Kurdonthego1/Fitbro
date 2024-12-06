@@ -32,17 +32,16 @@
 
 
 ## 1) **Introduction**
+FitBro is a workout tracker application that guides users by being able to provide customized workouts, which in evidently assists them with time management at the gym, along with retention and consistency. 
+FitBro hopes to provide an easy-to-use, accurate, and reliable workout tracking application that helps its users track their workouts, identify their performance, and make it an easier experience to care for your health at the gym.
+We believe there is a need for an application that is tailored towards expereinced and first-time gym-goers that will help with workut tracking.  
 
-FitBro hopes to provide an easy-to-use, accurate, and reliable workout tracking application that helps its users track their workouts, identify their performance, and make it an easier experience to care for your health at the gym
+
 
 ## 2) **Design Problem**
 * **2.1) Problem Definition**
 
-    For us and other people as well, consistency with their routine is a main struggle. Without a solution or a tool, users may be left in the dark and not be able to reach the fitness goal they set, leading to negative mental and physical impacts. Physically, users may undergo p
-sy
-    We are trying to solve this issue with our application.
-syhpf ri eht ni noitangats
-    We are trying to solve this issue with our application.
+For us and other people as well, consistency with their routine is a main struggle. Without a solution or a tool, users may be left in the dark and not be able to reach the fitness goal they set, leading to negative mental and physical impacts. Physically, users may undergo stagnation in their fitness journey due to improper planning, which causes them to become unmotivated to keep their routines on track. Our application aims to solve issues that help combat challenges that people struggle with by providing a tool that helps track progress, and provides easy-to-use workout templates to help users with consistency.
 
 
 
@@ -99,8 +98,13 @@ syhpf ri eht ni noitangats
         * MongoDB: The NoSQL database that stores the application data in collections and documents.
         * Mongoose: A library that extends MongoDB, providing schema-based models to interact with the database using JavaScript code. It simplifies querying, updating, deleting, and inserting data.
         * Mongosh: A shell tool used to interact directly with the MongoDB database from the command line, allowing manual operations outside the JavaScript application.
-
-![Comp Map]()
+<br />
+<br />
+<br />
+![Comp Map](Documents/Charts/CompMapMVC.png)
+<br />
+<br />
+<br />
 
 * **3.3.2) Features:** 
 
@@ -128,50 +132,62 @@ syhpf ri eht ni noitangats
 
 ## 4) **Teamwork**
 
-* Week 1
-    * [Meeting 1]()
+* September 15th - 21st, 2024
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2015th,%202024.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20September%2015th,%202024.docx.pdf)
+
+* September 29th - October 5th, 2024
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2029th%20-%20October%205th,%202024.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Sept%2029th%20-%20Oct%205th.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20Sept%2029th%20-%20October%205th,%202024.pdf)
+
+* October 6th - 12th, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
     * [Project Status Report]()
 
-* Week 2
-    * [Meeting 1]()
+* October 13th - 19th, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
     * [Project Status Report]()
 
-* Week 3
-    * [Meeting 1]()
+* October 20th - 26th, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
     * [Project Status Report]()
 
-* Week 4
-    * [Meeting 1]()
+* October 27th - November 2nd, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
     * [Project Status Report]()
 
-* Week 5
-    * [Meeting 1]()
+* November 3rd - 9th, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
     * [Project Status Report]()
 
-* Week 6
-    * [Meeting 1]()
+* November 17th - 23rd, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
     * [Project Status Report]()
 
-* Week 7
-    * [Meeting 1]()
+* November 24th - 30th, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
     * [Project Status Report]()
 
-* Week 8
-    * [Meeting 1]()
+* December 1st - 7th, 2024
+    * [Meeting Minutes 1]()
     * [Agenda 1]()
-    * [Project Status Report]()
 
 
 ## 5) **Project Management**
 
+<br />
+
 ![Activity Network](Documents/Charts/Project%20Activity%20Network.png)
+
+<br />
 
 ![GanttChart](Documents/Charts/Project%20Gantt%20Chart.png)
 
@@ -179,7 +195,7 @@ syhpf ri eht ni noitangats
 
 ## 6) **Conclusion and Future Work**
 
-### What was Achieved?
+## What was Achieved?
 
 We created a functioning workout tracker app that allowed a user to register, login, create workouts, add custom exercseis and add them to the active workout. Add/Update sets and remove them. Remove exercises as needed. Finally finish the workout and save as a template if needed and could reuse the template on a new workout.
 
@@ -188,6 +204,22 @@ We also learned about the MVC design pattern and utilized to create our applicat
 Finally we learned a lot about new languages and how to utilize them to work together in unison to create a project.
 
 
-### Future Recommendations and Design Improvements
+## Future Recommendations and Design Improvements
 
-- Add templated workout
+Add templated workouts for users without knowledge of exercises
+
+Implement on mobile application for easier user interaction while exercising.
+
+Utilize more complex calculations and decision making algorithims between design choices
+
+Introduce more diverse set options for more customaizable workouts
+
+Workout Analytics and History Page
+
+Increased use safety and privacy
+
+Exportable data to CSV
+
+Improved user feedback to better tell the user what the app is doing when interacting with it
+
+API's and AI implementation for recommend workouts/exercises based on user trends.
