@@ -69,7 +69,6 @@ In the following sections, you will dive into the solutions, tools, and methodol
         - Time constraints, project needs to be completed in 3 months
         - Hardware and Software constraints
 
-
 ## 3) **Solution**
 * **3.1) First Solution**
 
@@ -97,7 +96,9 @@ In the following sections, you will dive into the solutions, tools, and methodol
 
 * **3.3) Final Solution**
 
-    Our final solution was a mixture of Solution 1 and Solution 2, it was a final combination of our low fidelity prototypes and user feedback. It focused on providing the necessary functions of the application that would ensure its viability while also maintaining realistic time standards due to the short time available to develop the solution. (Provide comparison chart)
+    Our final solution was a mixture of Solution 1 and Solution 2, it was a final combination of our low fidelity prototypes and user feedback. It focused on providing the necessary functions of the application that would ensure its viability while also maintaining realistic time standards due to the short time available to develop the solution. 
+    
+    [Comparison Chart](Documents/Design%20Comparison%20Matrix.pdf)
 
 * **3.3.1) Components**
 
@@ -117,9 +118,12 @@ In the following sections, you will dive into the solutions, tools, and methodol
         * Mongoose: A library that extends MongoDB, providing schema-based models to interact with the database using JavaScript code. It simplifies querying, updating, deleting, and inserting data.
         * Mongosh: A shell tool used to interact directly with the MongoDB database from the command line, allowing manual operations outside the JavaScript application.
 <br />
+<br />
+<div align="center">
 
 ![Comp Map](Documents/Charts/CompMapMVC.png)
 
+</div>
 <br />
 
 * **3.3.2) Features:** 
@@ -127,7 +131,7 @@ In the following sections, you will dive into the solutions, tools, and methodol
     *   | Feature | Description |
         |----------|----------|
         | Registration | Ability for user to register an account for the application | 
-        | Login | Ability for user to logic to use the application |
+        | Login | Ability for user to login to use the application |
         | Start a Workout and Edit Workout/Exercises and Save workout | Ability for user to start a workout, add exercises from their own custom exercises or templated ones, add sets to the exercise, with reps and weight and confirm it. Removing sets and exercises is also available. Finally the user is able to save the workout with a name and description and an option to save the workout as a template |
         | Utilize Templated Workout | After saving a workout as a template, the user is able to reload that workout template into a brand new workout and edit values as they like |
         | Add custom exercises | Ability to create custom exercises into their own custom exercise list to utilize in all future workouts |
@@ -149,17 +153,17 @@ In the following sections, you will dive into the solutions, tools, and methodol
 ## 4) **Teamwork**
 
 * September 15th - 21st, 2024
-    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2015th,%202024.docx.pdf)
+    * [Meeting Minutes - September 15th, 2024](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2015th,%202024.docx.pdf)
     * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20September%2015th,%202024.docx.pdf)
 
 * September 29th - October 5th, 2024
     * [Meeting Minutes - Stakeholder Meeting](Documents/Meeting%20Minutes/Meeting%20Minutes%20Fit%20Bro%20October%204th,%202024.docx.pdf)
-    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2029th%20-%20October%205th,%202024.docx.pdf)
+    * [Meeting Minutes - September 29th, 2024](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2029th%20-%20October%205th,%202024.docx.pdf)
     * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Sept%2029th%20-%20Oct%205th.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20Sept%2029th%20-%20October%205th,%202024.pdf)
 
 * October 6th - 12th, 2024
-    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20October%206th%20-%20October%2012th,%202024.docx.pdf)
+    * [Meeting Minutes - October 11th, 2024](Documents/Meeting%20Minutes/Meeting%20Minutes%20October%206th%20-%20October%2012th,%202024.docx.pdf)
     * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20October%2011th,%202024.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%206th%20-%2012th,%202024.pdf)
 
@@ -203,7 +207,6 @@ In the following sections, you will dive into the solutions, tools, and methodol
     * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20Dec%201st,%202024.docx.pdf)
     * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Dec%201st.docx.pdf)
 
-
 ## 5) **Project Management**
 
 <br />
@@ -232,20 +235,20 @@ Finally we learned a lot about new languages and how to utilize them to work tog
 
 ## Future Recommendations and Design Improvements
 
-Add templated workouts for users without knowledge of exercises
+* Add templated workouts for users without knowledge of exercises
 
-Implement on mobile application for easier user interaction while exercising.
+* Implement on mobile application for easier user interaction while exercising.
 
-Utilize more complex calculations and decision making algorithims between design choices
+* Utilize more complex calculations and decision making algorithims between design choices
 
-Introduce more diverse set options for more customaizable workouts
+* Introduce more diverse set options for more customaizable workouts
 
-Workout Analytics and History Page
+* Workout Analytics and History Page
 
-Increased use safety and privacy
+* Increased use safety and privacy
 
-Exportable data to CSV
+* Exportable data to CSV
 
-Improved user feedback to better tell the user what the app is doing when interacting with it
+* Improved user feedback to better tell the user what the app is doing when interacting with it
 
-API's and AI implementation for recommend workouts/exercises based on user trends.
+* API's and AI implementation for recommend workouts/exercises based on user trends.
