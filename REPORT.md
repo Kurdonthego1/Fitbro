@@ -32,9 +32,14 @@
 
 
 ## 1) **Introduction**
-FitBro is a workout tracker application that guides users by being able to provide customized workouts, which in evidently assists them with time management at the gym, along with retention and consistency. 
+FitBro is a workout tracker application that guides users by being able to provide customized workouts, which evidently, assists them with time management at the gym, along with retention and consistency. 
 FitBro hopes to provide an easy-to-use, accurate, and reliable workout tracking application that helps its users track their workouts, identify their performance, and make it an easier experience to care for your health at the gym.
-We believe there is a need for an application that is tailored towards expereinced and first-time gym-goers that will help with workut tracking.  
+We believe there is a need for an application that is tailored towards expereinced and first-time gym-goers that will help with workut tracking, as there has been a strong surge of people who want to start building good habits by working out.  
+
+
+* **2.1) Upcoming Section Overview**
+In the following sections, you will dive into the solutions, tools, and methodologies used to develop FitBro. Aside from the application itself, there are documents and information about how this project was managed throughout the 4 months given for this project. Because 4 months is all we could allott to the project, we have also discussed future steps and implementations we plan to carry out from this project. 
+
 
 
 
@@ -142,43 +147,49 @@ For us and other people as well, consistency with their routine is a main strugg
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20Sept%2029th%20-%20October%205th,%202024.pdf)
 
 * October 6th - 12th, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
-    * [Project Status Report]()
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20October%206th%20-%20October%2012th,%202024.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20October%2011th,%202024.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%206th%20-%2012th,%202024.pdf)
 
 * October 13th - 19th, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
-    * [Project Status Report]()
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%2013th%20-%2019th%202024.pdf)
 
 * October 20th - 26th, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
-    * [Project Status Report]()
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20Oct%2020.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Oct%2020th.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%2020th%20-%2026th,%202024.docx.pdf)
 
 * October 27th - November 2nd, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
-    * [Project Status Report]()
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2010th%20-%2016th,%202024.docx-1.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Oct%2027th%20-%20Nov%202.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%2027th%20-%20November%202nd.docx.pdf)
+    * [Issue Log](/Documents/Issue%20Logs/Issue%20Log%20-%20October%2027th%20-%20November%202nd,%202024.docx.pdf)
 
 * November 3rd - 9th, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
-    * [Project Status Report]()
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20Nov%203rd,%202024.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Nov%203rd%20.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/)
+    * [Issue Log](Documents/Issue%20Logs/Issue%20Log%20-%20November%203rd%20-%209th,%202024.docx.pdf)
+
+* November 10th - 16th, 2024
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2010th%20-%2016th,%202024.docx-1.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Nov%2010th%202024.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20November%2010th-16th,%202024.docx.pdf)
+    * [Issue Log](Documents/Issue%20Logs/Issue%20Log%20-%20November%2010th%20-%2016th,%202024.docx.pdf)
 
 * November 17th - 23rd, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
-    * [Project Status Report]()
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2017th%20-%2023rd.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Nov%2017th%20-%2023rd.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20Nov%2017th-%2023rd,%202024.docx.pdf)
 
 * November 24th - 30th, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
-    * [Project Status Report]()
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2024th%20-%2030th.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20November%2024th%20-%2030th.docx.pdf)
+    * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20November%2024th-30th,%202024.docx.pdf)
 
 * December 1st - 7th, 2024
-    * [Meeting Minutes 1]()
-    * [Agenda 1]()
+    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20Dec%201st,%202024.docx.pdf)
+    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Dec%201st.docx.pdf)
 
 
 ## 5) **Project Management**
