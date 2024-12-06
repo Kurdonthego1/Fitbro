@@ -12,5 +12,5 @@ We believe there is a need for an application that is tailored towards expereinc
 - [**Zana Osman 200489300**](https://github.com/Kurdonthego1)
 
 ## Process
-* [Documentation]()
+* [Documentation](Documents)
 * [Final Report](REPORT.md)
