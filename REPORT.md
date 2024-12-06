@@ -15,7 +15,7 @@
 2) [**Design Problem**](#2-design-problem)
     * 2.1) Problem Definition
     * 2.2) Project Charter
-        * 2.2.1) Functions 
+        * 2.2.1) Functions
         * 2.2.2) Objectives
         * 2.2.3) Constraints
 3) [**Solution**](#3-solution)
@@ -23,30 +23,51 @@
     * 3.2) Second Solution
     * 3.3) Final Solution
         * 3.3.1) Components
-        * 3.3.2) Features 
+        * 3.3.2) Features
         * 3.3.3) Environmental, Societal, Safety, and Economic Considerations
         * 3.3.4) Limitations
 4) [**Teamwork**](#4-teamwork)
 5) [**Project Management**](#5-project-management)
 6) [**Conclusion and Future Work**](#6-conclusion-and-future-work)
 
-
 ## 1) **Introduction**
+
 FitBro is a workout tracker application that guides users by being able to provide customized workouts, which evidently, assists them with time management at the gym, along with retention and consistency. 
 FitBro hopes to provide an easy-to-use, accurate, and reliable workout tracking application that helps its users track their workouts, identify their performance, and make it an easier experience to care for your health at the gym.
 We believe there is a need for an application that is tailored towards expereinced and first-time gym-goers that will help with workut tracking, as there has been a strong surge of people who want to start building good habits by working out.  
 
-
-* **2.1) Upcoming Section Overview**
-In the following sections, you will dive into the solutions, tools, and methodologies used to develop FitBro. Aside from the application itself, there are documents and information about how this project was managed throughout the 4 months given for this project. Because 4 months is all we could allott to the project, we have also discussed future steps and implementations we plan to carry out from this project. 
-
-
-
+### **Upcoming Section Overview**
+In the following sections, you will dive into the solutions, tools, and methodologies used to develop FitBro. Aside from the application itself, there are documents and information about how this project was managed throughout the 3 months given for this project. Because 4 months is all we could allott to the project, we have also discussed future steps and implementations we plan to carry out from this project. 
 
 ## 2) **Design Problem**
+
+
 * **2.1) Problem Definition**
 
-For us and other people as well, consistency with their routine is a main struggle. Without a solution or a tool, users may be left in the dark and not be able to reach the fitness goal they set, leading to negative mental and physical impacts. Physically, users may undergo stagnation in their fitness journey due to improper planning, which causes them to become unmotivated to keep their routines on track. Our application aims to solve issues that help combat challenges that people struggle with by providing a tool that helps track progress, and provides easy-to-use workout templates to help users with consistency.
+    For us and other people as well, consistency with their routine is a main struggle. Without a solution or a tool, users may be left in the dark and not be able to reach the fitness goal they set, leading to negative mental and physical impacts. Physically, users may undergo stagnation in their fitness journey due to improper planning, which causes them to become unmotivated to keep their routines on track. Our application aims to solve issues that help combat challenges that people struggle with by providing a tool that helps track progress, and provides easy-to-use workout templates to help users with consistency.
+
+    [Business Case](Documents/Business%20Case.pdf)
+
+* **2.2) Project Charter:**
+
+    [Project Charter](Documents/Project%20Charter.pdf)
+
+    * **2.2.1) Functions**
+        - Workout tracking
+        - Custom workout templates
+        - Data syncing and saving
+        - User friendly navigation
+
+    * **2.2.2) Objectives**
+        - Easy to use interface
+        - Reliable data storing that is easy to retrieve
+        - Accurate visualization of user performance
+    
+    * **2.2.3) Constraints**
+        - Budget constraints
+        - Team size
+        - Time constraints, project needs to be completed in 3 months
+        - Hardware and Software constraints
 
 
 ## 3) **Solution**
@@ -77,8 +98,6 @@ For us and other people as well, consistency with their routine is a main strugg
 * **3.3) Final Solution**
 
     Our final solution was a mixture of Solution 1 and Solution 2, it was a final combination of our low fidelity prototypes and user feedback. It focused on providing the necessary functions of the application that would ensure its viability while also maintaining realistic time standards due to the short time available to develop the solution. (Provide comparison chart)
-
-
 
 * **3.3.1) Components**
 
@@ -132,36 +151,37 @@ For us and other people as well, consistency with their routine is a main strugg
 ## 4) **Teamwork**
 
 * September 15th - 21st, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2015th,%202024.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20September%2015th,%202024.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2015th,%202024.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20September%2015th,%202024.docx.pdf)
 
 * September 29th - October 5th, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2029th%20-%20October%205th,%202024.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Sept%2029th%20-%20Oct%205th.docx.pdf)
+    * [Meeting Minutes - Stakeholder Meeting](Documents/Meeting%20Minutes/Meeting%20Minutes%20Fit%20Bro%20October%204th,%202024.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20September%2029th%20-%20October%205th,%202024.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Sept%2029th%20-%20Oct%205th.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20Sept%2029th%20-%20October%205th,%202024.pdf)
 
 * October 6th - 12th, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20October%206th%20-%20October%2012th,%202024.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20October%2011th,%202024.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20October%206th%20-%20October%2012th,%202024.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20October%2011th,%202024.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%206th%20-%2012th,%202024.pdf)
 
 * October 13th - 19th, 2024
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%2013th%20-%2019th%202024.pdf)
 
 * October 20th - 26th, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20Oct%2020.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Oct%2020th.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20Oct%2020.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Oct%2020th.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%2020th%20-%2026th,%202024.docx.pdf)
 
 * October 27th - November 2nd, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2010th%20-%2016th,%202024.docx-1.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Oct%2027th%20-%20Nov%202.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2010th%20-%2016th,%202024.docx-1.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Oct%2027th%20-%20Nov%202.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20October%2027th%20-%20November%202nd.docx.pdf)
     * [Issue Log](/Documents/Issue%20Logs/Issue%20Log%20-%20October%2027th%20-%20November%202nd,%202024.docx.pdf)
 
 * November 3rd - 9th, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20Nov%203rd,%202024.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Nov%203rd%20.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20Nov%203rd,%202024.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Nov%203rd%20.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/)
     * [Issue Log](Documents/Issue%20Logs/Issue%20Log%20-%20November%203rd%20-%209th,%202024.docx.pdf)
 
@@ -172,18 +192,18 @@ For us and other people as well, consistency with their routine is a main strugg
     * [Issue Log](Documents/Issue%20Logs/Issue%20Log%20-%20November%2010th%20-%2016th,%202024.docx.pdf)
 
 * November 17th - 23rd, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2017th%20-%2023rd.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Nov%2017th%20-%2023rd.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2017th%20-%2023rd.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Nov%2017th%20-%2023rd.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20Nov%2017th-%2023rd,%202024.docx.pdf)
 
 * November 24th - 30th, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2024th%20-%2030th.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20November%2024th%20-%2030th.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20November%2024th%20-%2030th.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20November%2024th%20-%2030th.docx.pdf)
     * [Project Status Report](Documents/Project%20Status%20Report/Project%20Status%20Report%20November%2024th-30th,%202024.docx.pdf)
 
 * December 1st - 7th, 2024
-    * [Meeting Minutes 1](Documents/Meeting%20Minutes/Meeting%20Minutes%20Dec%201st,%202024.docx.pdf)
-    * [Agenda 1](Documents/Meeting%20Agenda/Meeting%20Agenda%20Dec%201st.docx.pdf)
+    * [Meeting Minutes](Documents/Meeting%20Minutes/Meeting%20Minutes%20Dec%201st,%202024.docx.pdf)
+    * [Agenda](Documents/Meeting%20Agenda/Meeting%20Agenda%20Dec%201st.docx.pdf)
 
 
 ## 5) **Project Management**
@@ -207,6 +227,8 @@ We created a functioning workout tracker app that allowed a user to register, lo
 We also learned about the MVC design pattern and utilized to create our application.
 
 Finally we learned a lot about new languages and how to utilize them to work together in unison to create a project.
+
+### Lessons Learned
 
 [Lessons Learned](Documents/Lessons%20Learned%20Report.docx.pdf)
 

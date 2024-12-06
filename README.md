@@ -61,6 +61,6 @@ Features would include:
 - View exercises data to see improvement of different intervals of time
 - This is our current WIP solution, however we are still developing and figuring out features to better serve the user.
 
-<a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Meeting%20Minutes/Meeting%20Minutes%20Nov%203rd%2C%202024%20FitBro.pdf">Meeting Minutes Nov 3d, 2024</a>
+<a href="https://github.com/Kurdonthego1/Fitbro/blob/main/Documents/Meeting%20Minutes/Meeting%20Minutes%20Nov%203rd%2C%202024%20FitBro.pdf">Meeting Minutes Nov 3rd, 2024</a>
 
 </h3>
