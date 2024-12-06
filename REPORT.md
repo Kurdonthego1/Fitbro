@@ -1,13 +1,13 @@
 <div align = "center">
 
-# FitBro 
+# FitBro
 
 </div>
 
 ## Contributions
-- [**Yuval Glozman**](https://github.com/YuvalCodes)
-- [**Aaron Borja**](https://github.com/creationNA)
-- [**Zana Osman**](https://github.com/Kurdonthego1)
+- [**Yuval Glozman 200482531**](https://github.com/YuvalCodes)
+- [**Aaron Borja 200482770**](https://github.com/creationNA)
+- [**Zana Osman 200489300**](https://github.com/Kurdonthego1)
 
 ## Table of Contents
 
@@ -47,12 +47,6 @@ In the following sections, you will dive into the solutions, tools, and methodol
 * **2.1) Problem Definition**
 
 For us and other people as well, consistency with their routine is a main struggle. Without a solution or a tool, users may be left in the dark and not be able to reach the fitness goal they set, leading to negative mental and physical impacts. Physically, users may undergo stagnation in their fitness journey due to improper planning, which causes them to become unmotivated to keep their routines on track. Our application aims to solve issues that help combat challenges that people struggle with by providing a tool that helps track progress, and provides easy-to-use workout templates to help users with consistency.
-
-
-
-
-
-
 
 
 ## 3) **Solution**
@@ -214,6 +208,7 @@ We also learned about the MVC design pattern and utilized to create our applicat
 
 Finally we learned a lot about new languages and how to utilize them to work together in unison to create a project.
 
+[Lessons Learned](Documents/Lessons%20Learned%20Report.docx.pdf)
 
 ## Future Recommendations and Design Improvements
 
