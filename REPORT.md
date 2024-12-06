@@ -117,11 +117,9 @@ In the following sections, you will dive into the solutions, tools, and methodol
         * Mongoose: A library that extends MongoDB, providing schema-based models to interact with the database using JavaScript code. It simplifies querying, updating, deleting, and inserting data.
         * Mongosh: A shell tool used to interact directly with the MongoDB database from the command line, allowing manual operations outside the JavaScript application.
 <br />
-<br />
-<br />
+
 ![Comp Map](Documents/Charts/CompMapMVC.png)
-<br />
-<br />
+
 <br />
 
 * **3.3.2) Features:** 
